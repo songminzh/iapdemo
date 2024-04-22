@@ -107,9 +107,9 @@ class Store: NSObject, ObservableObject {
     }
     
     
-    public func purchase(from productid: String, uid: String) async throws -> Transaction? {
+    public func purchase(from productId: String, uid: String) async throws -> Transaction? {
         do {
-            let product = try await product(from: productid)!
+            let product = try await product(from: productId)!
             return try await purchase(product: product, uid: uid)
         } catch PurchaseException.noProductMatched {
             throw PurchaseException.noProductMatched

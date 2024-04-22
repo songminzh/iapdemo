@@ -21,7 +21,7 @@ import StoreKit
         // 发起内购
         Task.init {
             do {
-                let transaction = try await purchaseManager.purchase(from: productId, uid: uid)
+                let transaction = try await purchaseManager.purchase(with: productId, uid: uid)
                 
                 //支付完成，发送凭据给服务端验证，请求发货。
                 if transaction != nil {
